@@ -1,0 +1,6 @@
+#!/bin/bash
+RESULT=`/usr/bin/w3watch -c`
+if [[ -n "$RESULT" ]]; then
+  echo "$RESULT" | mail -s "[W3WATCH] Got new changes" $1
+  echo "$RESULT"
+fi

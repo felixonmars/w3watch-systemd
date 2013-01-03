@@ -1,0 +1,9 @@
+[Unit]
+Description=Watch the web and get notified on updates
+
+[Timer]
+OnBootSec=10min
+OnUnitActiveSec=10min
+
+[Install]
+WantedBy=default.target
