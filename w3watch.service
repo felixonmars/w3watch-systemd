@@ -3,4 +3,4 @@ Description=Watch the web and get notified on updates
 
 [Service]
 Type=oneshot
-ExecStart=/usr/lib/systemd/scripts/w3watch-systemd %I
+ExecStart=/usr/lib/systemd/scripts/w3watch-systemd "%u" "%h"

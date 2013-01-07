@@ -1,6 +1,13 @@
 #!/bin/bash
-RESULT=`/usr/bin/w3watch -c`
+/usr/bin/killall w3watch 2>/dev/null
+/usr/bin/sleep .1
+/usr/bin/killall -9 w3watch 2>/dev/null
+/usr/bin/sleep .1
+
+rm -f "$2/.w3watch/lock"
+RESULT="$(/usr/bin/w3watch -c)"
+
 if [[ -n "$RESULT" ]]; then
-  echo "$RESULT" | mail -s "[W3WATCH] Got new changes" $1
   echo "$RESULT"
+  echo "$RESULT" | /usr/bin/mailx -vs "[W3WATCH] Got new changes" -r w3watch "$1"
 fi
