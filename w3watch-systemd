@@ -1,9 +1,4 @@
 #!/bin/bash
-/usr/bin/killall w3watch 2>/dev/null
-/usr/bin/sleep .1
-/usr/bin/killall -9 w3watch 2>/dev/null
-/usr/bin/sleep .1
-
 rm -f "$2/.w3watch/lock"
 RESULT="$(/usr/bin/w3watch -c)"
 
