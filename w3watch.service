@@ -6,3 +6,4 @@ Type=oneshot
 ExecStart=/usr/lib/systemd/scripts/w3watch-systemd "%u" "%h"
 TimeoutStartSec=10min
 TimeoutStopSec=5s
+Restart=on-failure
