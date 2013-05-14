@@ -4,5 +4,5 @@ RESULT="$(/usr/bin/w3watch -c)"
 
 if [[ -n "$RESULT" ]]; then
   echo "$RESULT"
-  echo "$RESULT" | /usr/bin/mailx -vs "[W3WATCH] Got new changes" -r w3watch "$1"
+  echo "$RESULT" | /usr/bin/mailx -s "[W3WATCH] Got new changes" -r w3watch "$1"
 fi
